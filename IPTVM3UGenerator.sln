@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IPTVM3UGenerator", "IPTVM3UGenerator\IPTVM3UGenerator.vbproj", "{D6BD0467-A8AF-452D-A10D-4BED7589D7F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6BD0467-A8AF-452D-A10D-4BED7589D7F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6BD0467-A8AF-452D-A10D-4BED7589D7F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6BD0467-A8AF-452D-A10D-4BED7589D7F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6BD0467-A8AF-452D-A10D-4BED7589D7F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F76775A-22B2-4593-8081-FF8CBC8DD987}
+	EndGlobalSection
+EndGlobal

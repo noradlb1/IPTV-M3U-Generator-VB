@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D6BD0467-A8AF-452D-A10D-4BED7589D7F1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace></RootNamespace>
+    <AssemblyName>IPTV M3U Generator</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iptv.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.11.46.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.46\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="LightWebNetScraper, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightWebNetScraper.0.0.2\lib\netstandard2.0\LightWebNetScraper.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmGui.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGui.Designer.vb">
+      <DependentUpon>FrmGui.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MyHtmlWeb.vb" />
+    <Compile Include="MyWebClient.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <EmbeddedResource Include="FrmGui.resx">
+      <DependentUpon>FrmGui.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Icons\iptv.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="iptv.ico" />
+    <Content Include="Resources\Flags\ad.png" />
+    <Content Include="Resources\Flags\ae.png" />
+    <Content Include="Resources\Flags\af.png" />
+    <Content Include="Resources\Flags\ag.png" />
+    <Content Include="Resources\Flags\ai.png" />
+    <Content Include="Resources\Flags\al.png" />
+    <Content Include="Resources\Flags\am.png" />
+    <Content Include="Resources\Flags\ao.png" />
+    <Content Include="Resources\Flags\aq.png" />
+    <Content Include="Resources\Flags\ar.png" />
+    <Content Include="Resources\Flags\as.png" />
+    <Content Include="Resources\Flags\at.png" />
+    <Content Include="Resources\Flags\au.png" />
+    <Content Include="Resources\Flags\aw.png" />
+    <Content Include="Resources\Flags\ax.png" />
+    <Content Include="Resources\Flags\az.png" />
+    <Content Include="Resources\Flags\ba.png" />
+    <Content Include="Resources\Flags\bb.png" />
+    <Content Include="Resources\Flags\bd.png" />
+    <Content Include="Resources\Flags\be.png" />
+    <Content Include="Resources\Flags\bf.png" />
+    <Content Include="Resources\Flags\bg.png" />
+    <Content Include="Resources\Flags\bh.png" />
+    <Content Include="Resources\Flags\bi.png" />
+    <Content Include="Resources\Flags\bj.png" />
+    <Content Include="Resources\Flags\bl.png" />
+    <Content Include="Resources\Flags\bm.png" />
+    <Content Include="Resources\Flags\bn.png" />
+    <Content Include="Resources\Flags\bo.png" />
+    <Content Include="Resources\Flags\bq.png" />
+    <Content Include="Resources\Flags\br.png" />
+    <Content Include="Resources\Flags\bs.png" />
+    <Content Include="Resources\Flags\bt.png" />
+    <Content Include="Resources\Flags\bv.png" />
+    <Content Include="Resources\Flags\bw.png" />
+    <Content Include="Resources\Flags\by.png" />
+    <Content Include="Resources\Flags\bz.png" />
+    <Content Include="Resources\Flags\ca.png" />
+    <Content Include="Resources\Flags\cc.png" />
+    <Content Include="Resources\Flags\cd.png" />
+    <Content Include="Resources\Flags\cf.png" />
+    <Content Include="Resources\Flags\cg.png" />
+    <Content Include="Resources\Flags\ch.png" />
+    <Content Include="Resources\Flags\ci.png" />
+    <Content Include="Resources\Flags\ck.png" />
+    <Content Include="Resources\Flags\cl.png" />
+    <Content Include="Resources\Flags\cm.png" />
+    <Content Include="Resources\Flags\cn.png" />
+    <Content Include="Resources\Flags\co.png" />
+    <Content Include="Resources\Flags\cr.png" />
+    <Content Include="Resources\Flags\cu.png" />
+    <Content Include="Resources\Flags\cv.png" />
+    <Content Include="Resources\Flags\cw.png" />
+    <Content Include="Resources\Flags\cx.png" />
+    <Content Include="Resources\Flags\cy.png" />
+    <Content Include="Resources\Flags\cz.png" />
+    <Content Include="Resources\Flags\de.png" />
+    <Content Include="Resources\Flags\dj.png" />
+    <Content Include="Resources\Flags\dk.png" />
+    <Content Include="Resources\Flags\dm.png" />
+    <Content Include="Resources\Flags\do.png" />
+    <Content Include="Resources\Flags\dz.png" />
+    <Content Include="Resources\Flags\ec.png" />
+    <Content Include="Resources\Flags\ee.png" />
+    <Content Include="Resources\Flags\eg.png" />
+    <Content Include="Resources\Flags\eh.png" />
+    <Content Include="Resources\Flags\er.png" />
+    <Content Include="Resources\Flags\es.png" />
+    <Content Include="Resources\Flags\et.png" />
+    <Content Include="Resources\Flags\fi.png" />
+    <Content Include="Resources\Flags\fj.png" />
+    <Content Include="Resources\Flags\fk.png" />
+    <Content Include="Resources\Flags\fm.png" />
+    <Content Include="Resources\Flags\fo.png" />
+    <Content Include="Resources\Flags\fr.png" />
+    <Content Include="Resources\Flags\ga.png" />
+    <Content Include="Resources\Flags\gb-eng.png" />
+    <Content Include="Resources\Flags\gb-nir.png" />
+    <Content Include="Resources\Flags\gb-sct.png" />
+    <Content Include="Resources\Flags\gb-wls.png" />
+    <Content Include="Resources\Flags\gb.png" />
+    <Content Include="Resources\Flags\gd.png" />
+    <Content Include="Resources\Flags\ge.png" />
+    <Content Include="Resources\Flags\gf.png" />
+    <Content Include="Resources\Flags\gg.png" />
+    <Content Include="Resources\Flags\gh.png" />
+    <Content Include="Resources\Flags\gi.png" />
+    <Content Include="Resources\Flags\gl.png" />
+    <Content Include="Resources\Flags\gm.png" />
+    <Content Include="Resources\Flags\gn.png" />
+    <Content Include="Resources\Flags\gp.png" />
+    <Content Include="Resources\Flags\gq.png" />
+    <Content Include="Resources\Flags\gr.png" />
+    <Content Include="Resources\Flags\gs.png" />
+    <Content Include="Resources\Flags\gt.png" />
+    <Content Include="Resources\Flags\gu.png" />
+    <Content Include="Resources\Flags\gw.png" />
+    <Content Include="Resources\Flags\gy.png" />
+    <Content Include="Resources\Flags\hk.png" />
+    <Content Include="Resources\Flags\hm.png" />
+    <Content Include="Resources\Flags\hn.png" />
+    <Content Include="Resources\Flags\hr.png" />
+    <Content Include="Resources\Flags\ht.png" />
+    <Content Include="Resources\Flags\hu.png" />
+    <Content Include="Resources\Flags\id.png" />
+    <Content Include="Resources\Flags\ie.png" />
+    <Content Include="Resources\Flags\il.png" />
+    <Content Include="Resources\Flags\im.png" />
+    <Content Include="Resources\Flags\in.png" />
+    <Content Include="Resources\Flags\io.png" />
+    <Content Include="Resources\Flags\iq.png" />
+    <Content Include="Resources\Flags\ir.png" />
+    <Content Include="Resources\Flags\is.png" />
+    <Content Include="Resources\Flags\it.png" />
+    <Content Include="Resources\Flags\je.png" />
+    <Content Include="Resources\Flags\jm.png" />
+    <Content Include="Resources\Flags\jo.png" />
+    <Content Include="Resources\Flags\jp.png" />
+    <Content Include="Resources\Flags\ke.png" />
+    <Content Include="Resources\Flags\kg.png" />
+    <Content Include="Resources\Flags\kh.png" />
+    <Content Include="Resources\Flags\ki.png" />
+    <Content Include="Resources\Flags\km.png" />
+    <Content Include="Resources\Flags\kn.png" />
+    <Content Include="Resources\Flags\kp.png" />
+    <Content Include="Resources\Flags\kr.png" />
+    <Content Include="Resources\Flags\kw.png" />
+    <Content Include="Resources\Flags\ky.png" />
+    <Content Include="Resources\Flags\kz.png" />
+    <Content Include="Resources\Flags\la.png" />
+    <Content Include="Resources\Flags\lb.png" />
+    <Content Include="Resources\Flags\lc.png" />
+    <Content Include="Resources\Flags\li.png" />
+    <Content Include="Resources\Flags\lk.png" />
+    <Content Include="Resources\Flags\lr.png" />
+    <Content Include="Resources\Flags\ls.png" />
+    <Content Include="Resources\Flags\lt.png" />
+    <Content Include="Resources\Flags\lu.png" />
+    <Content Include="Resources\Flags\lv.png" />
+    <Content Include="Resources\Flags\ly.png" />
+    <Content Include="Resources\Flags\ma.png" />
+    <Content Include="Resources\Flags\mc.png" />
+    <Content Include="Resources\Flags\md.png" />
+    <Content Include="Resources\Flags\me.png" />
+    <Content Include="Resources\Flags\mf.png" />
+    <Content Include="Resources\Flags\mg.png" />
+    <Content Include="Resources\Flags\mh.png" />
+    <Content Include="Resources\Flags\mk.png" />
+    <Content Include="Resources\Flags\ml.png" />
+    <Content Include="Resources\Flags\mm.png" />
+    <Content Include="Resources\Flags\mn.png" />
+    <Content Include="Resources\Flags\mo.png" />
+    <Content Include="Resources\Flags\mp.png" />
+    <Content Include="Resources\Flags\mq.png" />
+    <Content Include="Resources\Flags\mr.png" />
+    <Content Include="Resources\Flags\ms.png" />
+    <Content Include="Resources\Flags\mt.png" />
+    <Content Include="Resources\Flags\mu.png" />
+    <Content Include="Resources\Flags\mv.png" />
+    <Content Include="Resources\Flags\mw.png" />
+    <Content Include="Resources\Flags\mx.png" />
+    <Content Include="Resources\Flags\my.png" />
+    <Content Include="Resources\Flags\mz.png" />
+    <Content Include="Resources\Flags\na.png" />
+    <Content Include="Resources\Flags\nc.png" />
+    <Content Include="Resources\Flags\ne.png" />
+    <Content Include="Resources\Flags\nf.png" />
+    <Content Include="Resources\Flags\ng.png" />
+    <Content Include="Resources\Flags\ni.png" />
+    <Content Include="Resources\Flags\nl.png" />
+    <Content Include="Resources\Flags\no.png" />
+    <Content Include="Resources\Flags\np.png" />
+    <Content Include="Resources\Flags\nr.png" />
+    <Content Include="Resources\Flags\nu.png" />
+    <Content Include="Resources\Flags\nz.png" />
+    <Content Include="Resources\Flags\om.png" />
+    <Content Include="Resources\Flags\pa.png" />
+    <Content Include="Resources\Flags\pe.png" />
+    <Content Include="Resources\Flags\pf.png" />
+    <Content Include="Resources\Flags\pg.png" />
+    <Content Include="Resources\Flags\ph.png" />
+    <Content Include="Resources\Flags\pk.png" />
+    <Content Include="Resources\Flags\pl.png" />
+    <Content Include="Resources\Flags\pm.png" />
+    <Content Include="Resources\Flags\pn.png" />
+    <Content Include="Resources\Flags\pr.png" />
+    <Content Include="Resources\Flags\ps.png" />
+    <Content Include="Resources\Flags\pt.png" />
+    <Content Include="Resources\Flags\pw.png" />
+    <Content Include="Resources\Flags\py.png" />
+    <Content Include="Resources\Flags\qa.png" />
+    <Content Include="Resources\Flags\re.png" />
+    <Content Include="Resources\Flags\ro.png" />
+    <Content Include="Resources\Flags\rs.png" />
+    <Content Include="Resources\Flags\ru.png" />
+    <Content Include="Resources\Flags\rw.png" />
+    <Content Include="Resources\Flags\sa.png" />
+    <Content Include="Resources\Flags\sb.png" />
+    <Content Include="Resources\Flags\sc.png" />
+    <Content Include="Resources\Flags\sd.png" />
+    <Content Include="Resources\Flags\se.png" />
+    <Content Include="Resources\Flags\sg.png" />
+    <Content Include="Resources\Flags\sh.png" />
+    <Content Include="Resources\Flags\si.png" />
+    <Content Include="Resources\Flags\sj.png" />
+    <Content Include="Resources\Flags\sk.png" />
+    <Content Include="Resources\Flags\sl.png" />
+    <Content Include="Resources\Flags\sm.png" />
+    <Content Include="Resources\Flags\sn.png" />
+    <Content Include="Resources\Flags\so.png" />
+    <Content Include="Resources\Flags\sr.png" />
+    <Content Include="Resources\Flags\ss.png" />
+    <Content Include="Resources\Flags\st.png" />
+    <Content Include="Resources\Flags\sv.png" />
+    <Content Include="Resources\Flags\sx.png" />
+    <Content Include="Resources\Flags\sy.png" />
+    <Content Include="Resources\Flags\sz.png" />
+    <Content Include="Resources\Flags\tc.png" />
+    <Content Include="Resources\Flags\td.png" />
+    <Content Include="Resources\Flags\tf.png" />
+    <Content Include="Resources\Flags\tg.png" />
+    <Content Include="Resources\Flags\th.png" />
+    <Content Include="Resources\Flags\tj.png" />
+    <Content Include="Resources\Flags\tk.png" />
+    <Content Include="Resources\Flags\tl.png" />
+    <Content Include="Resources\Flags\tm.png" />
+    <Content Include="Resources\Flags\tn.png" />
+    <Content Include="Resources\Flags\to.png" />
+    <Content Include="Resources\Flags\tr.png" />
+    <Content Include="Resources\Flags\tt.png" />
+    <Content Include="Resources\Flags\tv.png" />
+    <Content Include="Resources\Flags\tw.png" />
+    <Content Include="Resources\Flags\tz.png" />
+    <Content Include="Resources\Flags\ua.png" />
+    <Content Include="Resources\Flags\ug.png" />
+    <Content Include="Resources\Flags\um.png" />
+    <Content Include="Resources\Flags\us.png" />
+    <Content Include="Resources\Flags\uy.png" />
+    <Content Include="Resources\Flags\uz.png" />
+    <Content Include="Resources\Flags\va.png" />
+    <Content Include="Resources\Flags\vc.png" />
+    <Content Include="Resources\Flags\ve.png" />
+    <Content Include="Resources\Flags\vg.png" />
+    <Content Include="Resources\Flags\vi.png" />
+    <Content Include="Resources\Flags\vn.png" />
+    <Content Include="Resources\Flags\vu.png" />
+    <Content Include="Resources\Flags\wf.png" />
+    <Content Include="Resources\Flags\ws.png" />
+    <Content Include="Resources\Flags\xk.png" />
+    <Content Include="Resources\Flags\ye.png" />
+    <Content Include="Resources\Flags\yt.png" />
+    <Content Include="Resources\Flags\za.png" />
+    <Content Include="Resources\Flags\zm.png" />
+    <Content Include="Resources\Flags\zw.png" />
+    <Content Include="Resources\Icons\iptv.ico" />
+    <Content Include="Resources\Icons\iptv.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>XCOPY "$(ProjectDir)Resources\Flags" "$(TargetDir)\Flags\" /S /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>
